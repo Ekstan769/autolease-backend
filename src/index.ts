@@ -33,7 +33,9 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 AppDataSource.initialize()
-    .then(() => {
+    .then(async () => {
+        await AppDataSource.runMigrations();
+        console.log('Migrations ran successfully');
         console.log('Database connected successfully');
         app.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);    

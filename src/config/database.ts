@@ -26,5 +26,5 @@ export const AppDataSource = new DataSource({
         ? { rejectUnauthorized: false }
         : false,
     entities: [User, Vehicle, Booking, Payment, Wallet, WalletTransaction, Review],
-    migrations: ['src/database/migrations/**/*.ts'],
+    migrations: [],
 });
