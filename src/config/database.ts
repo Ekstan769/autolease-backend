@@ -11,6 +11,8 @@ import { Review } from '../entities/Review';
 
 dotenv.config();
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export const AppDataSource = new DataSource({
     type: 'postgres',
     host: process.env.DB_HOST,
@@ -20,6 +22,9 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: false,
     logging: false,
+    ssl: process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
     entities: [User, Vehicle, Booking, Payment, Wallet, WalletTransaction, Review],
     migrations: ['src/database/migrations/**/*.ts'],
 });

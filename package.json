@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --env-file=.env src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "migration:generate": "npm run typeorm -- -d src/config/database.ts migration:generate src/database/migrations/InitialMigration",
     "migration:run": "npm run typeorm -- -d src/config/database.ts migration:run"
