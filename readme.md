@@ -44,4 +44,4 @@ A production-ready car rental and marketplace REST API.
 [See ER_DIAGRAM.png in root folder]
 
 ## Deployment
-Live URL: [add after deploying to Render]
+Live URL: [https://autolease-backend.onrender.com]
